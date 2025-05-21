@@ -1,0 +1,1 @@
+# Raspberry_Pi_Pico_W-Fire-Earthquacke_sensing_station
