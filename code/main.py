@@ -14,7 +14,7 @@ while True:
     print("Temperature : {}C".format(str(temperature)))
     print("Humidity : {}%".format(str(humidity)))
     
-    if humidity > 45:
+    if temperature > 40:
         active_buzzer.value(1)
         sleep(0.5)
         active_buzzer.value(0)
