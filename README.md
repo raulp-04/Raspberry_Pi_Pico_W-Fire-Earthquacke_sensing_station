@@ -1,1 +1,3 @@
-# Raspberry_Pi_Pico_W-Fire-Earthquacke_sensing_station
+# Earthquacke / fire sensor
+
+This a project done by using a Raspberry Pi Pico W.
