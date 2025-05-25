@@ -3,7 +3,7 @@ def html_too_hot():
 <html>
 <head>
     <title>Monitorizare RPi Pico W</title>
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="3">
     <style>
         body {
             background-color: red;
@@ -18,7 +18,7 @@ def html_too_hot():
     </style>
 </head>
 <body>
-    <h1>THERE IS A FIRE</h1>
+    <h1>TEMPERATURE/HUMIDITY IS VERY HIGH</h1>
 </body>
 </html>"""
 
@@ -27,7 +27,7 @@ def html_earthquake():
 <html>
 <head>
     <title>Monitorizare RPi Pico W</title>
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="3">
     <style>
         body {
             background-color: orange;
@@ -47,7 +47,7 @@ def html_earthquake():
 </html>"""
 
 def generate_html(temp, hum, is_vibration):
-    if temp > 40:
+    if temp > 40 or hum > 80:
         return html_too_hot()
     elif is_vibration:
         return html_earthquake()
@@ -56,7 +56,7 @@ def generate_html(temp, hum, is_vibration):
 <html>
 <head>
     <title>Monitorizare RPi Pico W</title>
-    <meta http-equiv="refresh" content="2">
+    <meta http-equiv="refresh" content="3">
     <style>
         body {{
             font-family: Arial, sans-serif;
@@ -83,6 +83,9 @@ def generate_html(temp, hum, is_vibration):
 <body>
     <h1>Date de la senzori</h1>
     <p>Temperatura: {temp}C</p>
-    <p>Umiditate: {hum}%</p>
+    <p>Umiditate: {hum}%</p><br>
+    <form action="/" method="get">
+        <button type="submit" name="buzzer" value="on">Testeaza Buzzer-ul</button>
+    </form>
 </body>
 </html>"""
